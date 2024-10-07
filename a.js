@@ -87,3 +87,4 @@ const obj = {
   [1]: "c",
 };
 console.log(obj);
+sdhjfgar;lgjae;h
