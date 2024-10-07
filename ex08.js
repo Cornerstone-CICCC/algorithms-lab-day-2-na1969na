@@ -4,15 +4,7 @@
 // should return { 25: [{ name: "Alice", age: 25 }, { name: "Bob", age: 25 }], 30: [{ name: "Charlie", age: 30 }] }.
 
 function groupByAge(groups) {
-  return groups.reduce((acc, cur) => {
-    const { age } = cur;
-    if (!acc[age]) {
-      acc[age] = [];
-    }
-
-    acc[age].push(cur);
-    return acc;
-  }, {});
+  
 }
 
 console.log(

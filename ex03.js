@@ -4,16 +4,17 @@
 
 // sort()
 function findMissingNumber(arr) {
-  const result = -1;
+  const newArr = arr.sort((a, b) => a - b); // 昇順にソート
+  let missingNumber = null;
 
-  arr.sort((a, b) => a - b);
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i - 1] + 1) {
-      return arr[i] - 1;
+  for (let i = 0; i < newArr.length - 1; i++) {
+    if (newArr[i + 1] - newArr[i] !== 1) {
+      missingNumber = newArr[i] + 1;
+      break;
     }
   }
-  return result;
+
+  return missingNumber;ï
 }
 console.log(findMissingNumber([1, 2, 4, 5])); // Expected output: 3
 console.log(findMissingNumber([1, 3, 4, 5])); // Expected output: 2

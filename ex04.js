@@ -4,15 +4,20 @@
 
 // reduce()
 function mostFrequentChar(str) {
-  const letterCount = str.split("").reduce((acc, cur) => {
-    acc[cur] = (acc[cur] || 0) + 1;
+  let mostFrequentChar = "";
+  let mostFrequentCharCount = 0;
+
+  str.split("").reduce((acc, char) => {
+    acc[char] = (acc[char] || 0) + 1;
+    if (acc[char] > mostFrequentCharCount) {
+      mostFrequentCharCount = acc[char];
+      mostFrequentChar = char;
+    }
     return acc;
   }, {});
 
-  return Object.keys(letterCount).reduce((maxChar, char) => {
-    return letterCount[char] > letterCount[maxChar] ? char : maxChar;
-  });
+  return mostFrequentChar;
 }
 
-console.log(mostFrequentChar("javascript")); // Expected output: "a"
-console.log(mostFrequentChar("seventeen")); // Expected output: "e"
+// console.log(mostFrequentChar("javascript")); // Expected output: "a"
+console.log(mostFrequentChar("vanilla")); // Expected output: "e"

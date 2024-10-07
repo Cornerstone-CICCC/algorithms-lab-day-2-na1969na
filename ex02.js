@@ -5,7 +5,7 @@
 // filter()
 // includes()
 function arrayDifference(array1, array2) {
-  return array1.filter((element1) => !array2.includes(element1));
+  return array1.filter((num) => !array2.includes(num))
 }
 
 console.log(arrayDifference([1, 2, 3], [2, 3, 4])); // Expected output: [1]

@@ -3,15 +3,11 @@
 // Example: countConsonants("hello world") should return 7.
 
 function countConsonants(str) {
-  const vowel = ["a", "e", "i", "o", "u"];
-
-  const consonants = str
-    .toLowerCase()
-    .replace(/\s+/g, "")
-    .split("")
-    .filter((element1) => !vowel.includes(element1));
-  return consonants.length;
+  let result;
+  const newStr = str.replace(/\s+/g, "");
+  result = newStr.match(/[aeiouAEIOU]/gi);
+  return newStr.length - result.length;
 }
 
 console.log(countConsonants("hello world")); // Expected output: 7
-console.log(countConsonants("I am a student")); // Expected output: 
+console.log(countConsonants("I am a student")); // Expected output:
